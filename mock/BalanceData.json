@@ -1,0 +1,20 @@
+[
+    {
+        "icon": "assets/images/cardIcon.png",
+        "balanceType": "Load Balance",
+        "balance": "P 1675.00",
+        "validity": "Valid till 26 Dec"
+    },
+    {
+        "icon": "assets/images/playIcon.png",
+        "balanceType": "Data Balance",
+        "balance": "300 MB",
+        "validity": "of 12 GB"
+    },
+    {
+        "icon": "assets/images/playIcon.png",
+        "balanceType": "Wallet Balance",
+        "balance": "100.00",
+        "validity": "Valid till 2022"
+    }
+]

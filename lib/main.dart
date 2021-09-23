@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import './theme/AppColors.dart';
 import './resourses/Strings.dart';
 import './widgets/UserDetails.dart';
-import './widgets/BalanceDetails.dart';
+import './containers/BalanceContainer.dart';
 import './widgets/Promo.dart';
 import './widgets/SocialMedia.dart';
 import './widgets/RoamingPromo.dart';
@@ -12,6 +12,7 @@ import './widgets/Rewards.dart';
 import './widgets/Offers.dart';
 import './widgets/Button.dart';
 import './widgets/NetflixSlide.dart';
+import './screens/LifeStyle.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -60,7 +61,7 @@ class _TaskAppState extends State<TaskApp> {
       body: ListView(
         children: <Widget>[
           UserDetails(),
-          BalanceDetails(),
+          BalanceContainer(),
           Promo(),
           SocialMedia(),
           RoamingPromo(),
@@ -72,6 +73,7 @@ class _TaskAppState extends State<TaskApp> {
       ),
       bottomNavigationBar: SafeArea(
         child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
           currentIndex: indexValue,
           onTap: (index) => setState(() => indexValue = index),
           selectedItemColor: AppColors().warmBlueTwo,
@@ -79,19 +81,36 @@ class _TaskAppState extends State<TaskApp> {
           iconSize: 28,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.phone_android_outlined),
+              icon: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.phone_android_outlined),
+              ),
               label: 'Mobile',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.wine_bar_outlined),
+              icon: IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LifeStyle()),
+                  );
+                },
+                icon: Icon(Icons.wine_bar_outlined),
+              ),
               label: 'LifeStyle',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.wallet_membership_outlined),
+              icon: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.wallet_membership_outlined),
+              ),
               label: 'Wallet',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.more_vert_outlined),
+              icon: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.more_vert_outlined),
+              ),
               label: 'More',
             ),
           ],
